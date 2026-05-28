@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (header) {
         const navHTML = `
             <nav>
-                <ul>
+                <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+                <ul class="nav-links">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="sobre_mi.html">Sobre mi</a></li>
                     <li><a href="sobre_mi_obra.html">Sobre mi obra</a></li>
@@ -35,6 +36,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 link.classList.add('active');
             }
         });
+
+        // Lógica del menú hamburguesa en vista móvil
+        const menuToggle = header.querySelector('.menu-toggle');
+        const navUl = header.querySelector('.nav-links');
+        
+        if (menuToggle && navUl) {
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = navUl.classList.toggle('show');
+                menuToggle.setAttribute('aria-expanded', isExpanded);
+                // Cambia el ícono de hamburguesa a la 'X' cuando está abierto
+                menuToggle.innerHTML = isExpanded ? '&#10006;' : '&#9776;';
+            });
+        }
+    }
+
+    // =========================================
+    // LÓGICA DEL FOOTER
+    // =========================================
+    const footer = document.querySelector('footer');
+    if (footer) {
+        footer.innerHTML = `
+            <p>&copy; ${new Date().getFullYear()}. Todos los derechos reservados.</p>
+        `;
     }
 
     // =========================================

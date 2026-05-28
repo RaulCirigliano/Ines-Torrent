@@ -27,8 +27,7 @@ Este proyecto está diseñado con un enfoque minimalista y elegante para cederle
 ├── sobre_mi.html         # Biografía y trayectoria con foto de perfil
 ├── sobre_mi_obra.html    # Reseña de su concepto artístico
 ├── galeria.html          # Cuadrícula de obras
-├── carrusel.html     
-# presentacion de obras seleccionadas
+├── carrusel.html         # presentacion de obras seleccionadas
 ├── contacto.html         # Datos directos, redes sociales y Google Maps
 ├── estilos.css           # Hoja de estilos global y unificada
 ├── script.js             # Lógica del navbar y carrusel de inicio
