@@ -54,12 +54,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // =========================================
     // LÓGICA DEL FOOTER
     // =========================================
-    const footer = document.querySelector('footer');
-    if (footer) {
-        footer.innerHTML = `
-            <p>&copy; ${new Date().getFullYear()}. Todos los derechos reservados.</p>
-        `;
+    let footer = document.querySelector('footer');
+    if (!footer) {
+        footer = document.createElement('footer');
+        document.body.appendChild(footer);
     }
+    footer.innerHTML = `
+        <p>&copy; ${new Date().getFullYear()}. Todos los derechos reservados. | <a href="contacto.html">Contacto</a></p>
+    `;
 
     // =========================================
     // LÓGICA DEL CARRUSEL (Sólo para index.html)
