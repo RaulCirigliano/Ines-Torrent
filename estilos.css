@@ -206,6 +206,15 @@ footer a:hover {
     width: 90%;
     margin-top: 40px;
 }
+
+.gallery-sales-page .container {
+    max-width: 1200px;
+}
+
+.gallery-main-page .container {
+    max-width: 1200px;
+}
+
 .text-page .titulo-principal {
     font-size: 2.8rem;
 }
@@ -268,6 +277,7 @@ footer a:hover {
 /* =========================================
    3. PÁGINA DE GALERÍA (galeria.html, ines_galeria.html)
    ========================================= */
+/* Estilos para la página de galería con fondo oscuro (ya no se usa en galeria.html) */
 .gallery-page {
     font-family: 'Georgia', serif;
     background-color: #f4f4f4;
@@ -446,6 +456,61 @@ footer a:hover {
     color: #fff;
     border-bottom: 2px solid #fff;
     padding-bottom: 3px;
+}
+
+/* Carrusel Superior en Galería Principal */
+.top-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Altura fija para el carrusel */
+    margin: 40px 0;
+    overflow: hidden;
+    background-color: #e0e0e0;
+    border: 1px solid #ddd;
+}
+
+.top-carousel-slides {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.top-carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.top-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 'contain' para ver la obra completa sin recortes */
+}
+
+.top-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(26, 26, 26, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    transition: background-color 0.3s;
+    user-select: none;
+}
+
+.top-carousel-btn:hover {
+    background-color: rgba(26, 26, 26, 0.8);
+}
+
+.top-carousel-btn.prev {
+    left: 10px;
+}
+.top-carousel-btn.next {
+    right: 10px;
 }
 
 /* =========================================

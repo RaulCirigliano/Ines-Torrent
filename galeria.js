@@ -92,6 +92,41 @@ obrasInesTorrent.sort((a, b) => {
     return extraerAño(b.titulo) - extraerAño(a.titulo);
 });
 
+// --- Lógica del Carrusel Superior (solo para galeria.html) ---
+const topCarouselSlides = document.getElementById('topCarouselSlides');
+const topCarouselPrev = document.getElementById('topCarouselPrev');
+const topCarouselNext = document.getElementById('topCarouselNext');
+let topCarouselIndex = 0;
+
+if (topCarouselSlides) {
+    // 1. Poblar el carrusel con las mismas obras
+    obrasInesTorrent.forEach(obra => {
+        const slide = document.createElement('div');
+        slide.className = 'top-carousel-slide';
+        const img = document.createElement('img');
+        img.src = obra.url;
+        img.alt = obra.titulo;
+        img.loading = 'lazy';
+        slide.appendChild(img);
+        topCarouselSlides.appendChild(slide);
+    });
+
+    // 2. Funcionalidad de los botones
+    const moveTopCarousel = () => {
+        topCarouselSlides.style.transform = `translateX(-${topCarouselIndex * 100}%)`;
+    };
+
+    topCarouselNext.addEventListener('click', () => {
+        topCarouselIndex = (topCarouselIndex + 1) % obrasInesTorrent.length;
+        moveTopCarousel();
+    });
+
+    topCarouselPrev.addEventListener('click', () => {
+        topCarouselIndex = (topCarouselIndex - 1 + obrasInesTorrent.length) % obrasInesTorrent.length;
+        moveTopCarousel();
+    });
+}
+
 // Lógica de inyección en el DOM
 const contenedor = document.getElementById('galleryContainer');
 const modal = document.getElementById('imageModal');
