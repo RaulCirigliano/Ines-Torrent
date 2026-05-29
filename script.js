@@ -84,8 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
             slides[currentSlide].classList.add('active');
         }
 
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
 
         document.addEventListener('mousemove', (e) => {
             if (e.clientX < window.innerWidth / 2) {

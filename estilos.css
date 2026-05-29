@@ -171,8 +171,8 @@ footer a:hover {
     user-select: none;
 }
 .carousel-btn:hover { background-color: rgba(0, 0, 0, 0.8); }
-.prev { left: 30px; border-radius: 0; opacity: 1; }
-.next { right: 30px; border-radius: 0; opacity: 0; }
+.carousel-btn.prev { left: 30px; border-radius: 0; opacity: 1; }
+.carousel-btn.next { right: 30px; border-radius: 0; opacity: 0; }
 
 /* =========================================
    2. PÁGINAS DE TEXTO (sobre_mi, sobre_mi_obra)
@@ -424,6 +424,7 @@ footer a:hover {
     padding: 16px;
     margin-top: -50px;
     color: white;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro semitransparente */
     font-weight: bold;
     font-size: 40px;
     transition: 0.3s ease;
@@ -824,12 +825,12 @@ footer a:hover {
         height: 40px;
         font-size: 1.2rem;
     }
-    .prev, .next { 
+    .carousel-btn.prev, .carousel-btn.next { 
         opacity: 1 !important; 
         background-color: rgba(0, 0, 0, 0.6);
     }
-    .prev { left: 10px; }
-    .next { right: 10px; }
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
     
     .index-page footer {
         left: 0;
